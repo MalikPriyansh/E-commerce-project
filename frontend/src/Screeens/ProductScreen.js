@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useContext, useEffect, useReducer, useState } from "react";
+import { useContext, useEffect, useReducer } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -55,9 +55,9 @@ function ProductScreen(){
         setcount(count+1);
       };*/
     const addToCartHandler = async () => {
-      const existItem = cart.cartItems.find((x) => x.__id === product.__id);
+      const existItem = cart.cartItems.find((x) => x._id === product._id);
       const quantity = existItem ? existItem.quantity + 1 : 1;
-      const{data} = await axios.get(`/api/products/${product.__id}`);
+      const{data} = await axios.get(`/api/products/${product._id}`);
       if(data.countInStock < quantity){
         window.alert('Sorry . Product is out of stock');
         return;

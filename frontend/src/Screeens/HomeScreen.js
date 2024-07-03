@@ -2,10 +2,15 @@ import { useEffect, useReducer } from "react";
 import axios from "axios";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Carousel from 'react-bootstrap/Carousel';
 import Product from "../Components/Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../Components/LoadingBox";
 import MessageBox from "../Components/MessageBox";
+import img5 from '../Components/images/img5.png';
+import img6 from '../Components/images/img6.png';
+import img7 from '../Components/images/img7.png';
+import img8 from '../Components/images/img8.png';
 
 const reducer = (state , action) => {
   switch(action.type){
@@ -44,7 +49,42 @@ function HomeScreen(){
         <Helmet>
           <title>Amazona</title>
         </Helmet>
-        
+        <div style={{height : "20%"}}>
+          <Carousel>
+            <Carousel.Item>
+              <img 
+                src={img5}
+                //height = "5%"
+                width = "100%"
+                alt="First slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+            <img
+                //height = "5%"
+                width = "100%"
+                src={img6}
+                alt="Second slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+            <img 
+                src={img7}
+                //height = "5%"
+                width = "100%"
+                alt="Third slide"
+              />
+            </Carousel.Item>
+            <Carousel.Item>
+            <img 
+                src={img8}
+                //height = "5%"
+                width = "100%"
+                alt="fourth slide"
+              />
+            </Carousel.Item>
+          </Carousel>
+        </div>
         <h1>Featured Products</h1>
         <div className="products">
           {

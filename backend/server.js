@@ -5,6 +5,7 @@ import seedRouter from './routes/seedRoute.js';
 import productRouter from './routes/productRoute.js';
 import userRouter from './routes/userRoute.js';
 import orderRouter from './routes/orderRoutes.js';
+import cors from "cors";
 
 dotenv.config();
 
@@ -16,6 +17,11 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>{
 
 const app = express();
 
+app.use(cors({
+    origin: ["https://deploy-mern-1whq.vercel.app"],
+    method: ["POST", "GET"],
+    credentials: true
+}))
 app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 

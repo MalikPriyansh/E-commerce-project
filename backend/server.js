@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI).then(()=>{
 const app = express();
 
 app.use(cors({
-    origin: ["https://e-commerce-project-six-khaki.vercel.app"],
+    origin: ["https://e-commerce-project-4hgd.vercel.app"],
     method: ["POST", "GET"],
     credentials: true
 }))

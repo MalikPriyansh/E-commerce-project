@@ -16,7 +16,7 @@ const data = {
       isAdmin: false,
     },
   ],
-    products: [
+  products: [
       { 
         name: 'Nike Slim shirt',
         slug: 'nike-slim-shirt',

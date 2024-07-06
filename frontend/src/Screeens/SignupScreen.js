@@ -29,7 +29,7 @@ export default function SignupScreen() {
       return;
     }
     try {
-      const { data } = await Axios.post('/api/users/signup', {
+      const { data } = await Axios.post('https://e-commerce-project-9zp5.onrender.com/api/users/signup', {
         name,
         email,
         password,
